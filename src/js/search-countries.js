@@ -18,15 +18,19 @@ inputNameCountry.addEventListener('input', debounce(onSearch, 1000));
 defaultModules.set(PNotifyBootstrap4, {});
 
 function onSearch() {
+    containerCountries.innerHTML = '';
+    if (!inputNameCountry.value) {
+        return;
+    };
+
     fetchCountries(inputNameCountry.value)
-    .then(contentOutput)
-    .catch(error => alert(error))
-    .finally(() => { inputNameCountry.value = ''; });
+        .then(contentOutput)
+        .catch(error => alert(error));
 }
 
 // функция отрисовки контента
 function contentOutput(countries) {
-    if (countries.length > 2 && countries.length <= 10) {
+    if (countries.length >= 2 && countries.length <= 10) {
         containerCountries.innerHTML = renderCountries(countries);
         // inputNameCountry.value = '';
     }
@@ -37,8 +41,8 @@ function contentOutput(countries) {
     }
 
     if (countries.length > 10) {
-        console.log('Введите запрос точнее');
-        return error({
+        // console.log('Введите запрос точнее');
+        error({
             title: "Error:",
             text: "Too many matches found. Please enter a more specific query!"
         });
