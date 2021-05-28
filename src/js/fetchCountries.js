@@ -1,27 +1,13 @@
 export default function fetchCountries(searchQuery) {
     return fetch(`https://restcountries.eu/rest/v2/name/${searchQuery}`)
-    .then((response) => {
-        return response.json();
+    // .then((response) => {
+    //     return response.json();
+    //     })
+        .then((response) => {
+            if (response.ok) { // если HTTP-статус в диапазоне 200-299
+            return response.json();
+            } else {
+            alert("Ошибка HTTP: " + response.status);
+            }
         })
-        // .then((dataSearch) => {
-        //     return dataSearch;
-        // })
-        // console.log(countries);
-        // console.log(countries.length);
-        // if (countries.length > 2 && countries.length <= 10) {
-        //     // containerCountries.insertAdjacentHTML('beforeend', renderCountries(countries));
-        //     containerCountries.innerHTML = renderCountries(countries);
-        //     inputNameCountry.value = '';
-        // }
-
-        // if (countries.length === 1) {
-        //     // containerCountries.insertAdjacentHTML('beforeend', renderCountry(countries));
-        //     containerCountries.innerHTML = renderCountry(countries);
-        //     inputNameCountry.value = '';
-        // }
-
-        //  if (countries.length > 10) {
-        //     console.log('Введите запрос точнее');
-        // }   
-    // })
 }
