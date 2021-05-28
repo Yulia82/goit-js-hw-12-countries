@@ -13,7 +13,7 @@ import * as PNotifyBootstrap4 from '@pnotify/bootstrap4'
 const containerCountries = document.querySelector('.js-countries');
 const inputNameCountry = document.querySelector('#input-name-country');
 
-inputNameCountry.addEventListener('input', debounce(onSearch, 1000));
+inputNameCountry.addEventListener('input', debounce(onSearch, 500));
 
 defaultModules.set(PNotifyBootstrap4, {});
 
