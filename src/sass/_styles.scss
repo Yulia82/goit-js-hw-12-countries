@@ -1,0 +1,62 @@
+body {
+  margin-left: 100px;
+  margin-right: 100px;
+  padding-top: 40px;
+
+  font-family: 'Roboto', 'Verdana', sans-serif;
+
+  background-color: rgba(243, 244, 252, 0.829);
+}
+
+.search {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.search-txt {
+  font-size: 12px;
+}
+
+// стили для одной страны
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.description {
+  margin-right: 60px;
+}
+
+.title-country {
+  margin-bottom: 30px;
+  text-align: center;
+
+  font-weight: 700;
+  font-size: 58px;
+
+  color: rgb(243, 29, 29);
+  text-shadow: 2px 2px 4px;
+}
+
+.text {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.txt-insert {
+  font-size: 19px;
+  line-height: 1.5;
+}
+
+.flag-image {
+  height: 300px;
+  object-fit: cover;
+  max-width: 100%;
+}
+
+// стили для списка стран
+.item-country {
+  margin-bottom: 10px;
+}
